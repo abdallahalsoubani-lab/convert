@@ -115,8 +115,8 @@ class ImageConverterService {
             return nil
         }
 
-        let bounds = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-        guard let pdfContext = CGContext(consumer: consumer, mediaBox: &bounds.origin, nil) else {
+        var mediaBox = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+        guard let pdfContext = CGContext(consumer: consumer, mediaBox: &mediaBox, nil) else {
             return nil
         }
 
