@@ -125,7 +125,7 @@ class ImageConverterService {
         let graphicsContext = NSGraphicsContext(cgContext: pdfContext, flipped: false)
         NSGraphicsContext.current = graphicsContext
 
-        image.draw(in: bounds)
+        image.draw(in: mediaBox)
 
         pdfContext.endPDFPage()
         pdfContext.closePDF()
